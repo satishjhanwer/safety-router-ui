@@ -14,6 +14,7 @@ export default async function Home() {
       verify(token, process.env.JWT_SECRET!);
       redirect("/dashboard");
     } catch (error) {
+      console.error(error);
       // Token is invalid, continue to landing page
       cookieStore.delete('token');
     }
@@ -115,7 +116,7 @@ export default async function Home() {
   );
 }
 
-function FeatureCard({ title, description }: { title: string; description: string }) {
+function FeatureCard({ title, description }: Readonly<{ title: string; description: string }>) {
   return (
     <div className="p-6 rounded-lg border bg-card">
       <h3 className="text-xl font-semibold mb-3">{title}</h3>
@@ -124,7 +125,7 @@ function FeatureCard({ title, description }: { title: string; description: strin
   );
 }
 
-function StepCard({ number, title, description }: { number: string; title: string; description: string }) {
+function StepCard({ number, title, description }: Readonly<{ number: string; title: string; description: string }>) {
   return (
     <div className="p-6 rounded-lg border bg-card text-center">
       <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center mx-auto mb-4">

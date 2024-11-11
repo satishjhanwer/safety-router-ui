@@ -15,6 +15,7 @@ export default async function Dashboard() {
     try {
         verify(token, process.env.JWT_SECRET!);
     } catch (error) {
+        console.error(error);
         redirect('/');
     }
 

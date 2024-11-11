@@ -26,6 +26,7 @@ export function useAuth() {
           router.push('/');
         }
       } catch (error) {
+        console.error(error);
         setState({
           isAuthenticated: false,
           isLoading: false,

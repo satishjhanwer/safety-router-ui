@@ -14,6 +14,7 @@ export default async function Login() {
             verify(token, process.env.JWT_SECRET!);
             redirect("/dashboard");
         } catch (error) {
+            console.error(error);
             // Token is invalid, continue to login page
             cookieStore.delete('token');
         }

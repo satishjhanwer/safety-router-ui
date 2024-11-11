@@ -73,7 +73,7 @@ export function PromptForm() {
             <CardHeader>
                 <h2 className="text-2xl font-semibold">Enter your prompt</h2>
                 <p className="text-sm text-gray-500">
-                    We'll analyze your prompt and route it to the most appropriate AI model.
+                    We&apos;ll analyze your prompt and route it to the most appropriate AI model.
                 </p>
             </CardHeader>
             <CardContent>

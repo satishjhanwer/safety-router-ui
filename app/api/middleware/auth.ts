@@ -9,7 +9,8 @@ interface DecodedToken extends JwtPayload {
   username: string;
 }
 
-export async function authenticateToken(request: Request): Promise<DecodedToken | NextResponse> {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export async function authenticateToken(_request: Request): Promise<DecodedToken | NextResponse> {
   try {
     const cookieStore = cookies();
     const token = cookieStore.get('token')?.value;
@@ -24,6 +25,7 @@ export async function authenticateToken(request: Request): Promise<DecodedToken 
     const decoded = verify(token, JWT_SECRET!) as DecodedToken;
     return decoded;
   } catch (error) {
+    console.error(error);
     return NextResponse.json(
       { error: 'Invalid token' },
       { status: 401 }
