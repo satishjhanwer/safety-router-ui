@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 interface AuthState {
   isAuthenticated: boolean;
@@ -16,14 +16,14 @@ export function useAuth() {
   useEffect(() => {
     async function checkAuth() {
       try {
-        const response = await fetch('/api/auth/check');
+        const response = await fetch("/api/auth/check");
         setState({
           isAuthenticated: response.ok,
           isLoading: false,
         });
 
         if (!response.ok) {
-          router.push('/');
+          router.push("/");
         }
       } catch (error) {
         console.error(error);
@@ -31,7 +31,7 @@ export function useAuth() {
           isAuthenticated: false,
           isLoading: false,
         });
-        router.push('/');
+        router.push("/");
       }
     }
 
@@ -39,4 +39,4 @@ export function useAuth() {
   }, [router]);
 
   return state;
-} 
+}

@@ -28,7 +28,7 @@ export default async function Dashboard() {
                 </div>
             </header>
             <main className="flex-1 container mx-auto px-6 py-8">
-                <div className="max-w-3xl mx-auto">
+                <div className="max-w-9xl mx-auto">
                     <PromptForm />
                 </div>
             </main>
