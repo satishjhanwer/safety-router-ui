@@ -121,4 +121,4 @@ Common issues and solutions:
 
 ## Contributing
 
-[Your contribution guidelines if this is an open-source project]
+TODO: Update this section
